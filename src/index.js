@@ -7,6 +7,8 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 import charsReducer from "./reducers";
+applyMiddleware(thunk, logger);
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 const store = createStore(charsReducer, applyMiddleware(thunk, logger));
 
